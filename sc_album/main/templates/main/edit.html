@@ -1,14 +1,15 @@
+<!--수정페이지:필요할 때 쓰는걸로-->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>글 수정 페이지</title>
+    <title>메뉴 등록 페이지</title>
 </head>
 <body>
     <h1></h1>
     <form  action="{%url 'update' post.pk %}" method="post" enctype="multipart/form-data">
         {% csrf_token %}
-        날짜 입력<br>
+        메뉴이름(가격)<br>
         <input type="text" name="postname" value="{{post.postname}}"><br>
         내용<br>
         <textarea rows="10" cols="50" name="contents">{{post.contents}}</textarea><br>

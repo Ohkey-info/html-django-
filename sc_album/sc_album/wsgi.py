@@ -7,10 +7,7 @@ For more information on this file, see
 https://docs.djangoproject.com/en/3.2/howto/deployment/wsgi/
 """
 
-import os, sys
-
-sys.path.append('/home/ubuntu/album/sc_album')
-sys.path.append('/home/ubuntu/album/sc_album/[venv_name]/lib/python3.5/site-packages')
+import os
 
 from django.core.wsgi import get_wsgi_application
 

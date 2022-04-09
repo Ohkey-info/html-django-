@@ -2,13 +2,13 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>글쓰기 페이지</title>
+    <title>메뉴 등록 페이지</title>
 </head>
 <body>
-    <h1>오늘은 뭐했지~?</h1>
+    <h1>메뉴를 등록하세요</h1>
     <form action="{%url 'new_post' %}" method="POST" enctype="multipart/form-data">
         {% csrf_token %}
-        날짜 입력<br>
+        메뉴 이름(가격)<br>
         <input type="text" name="postname"><br>
         <br>
         내용<br>
@@ -16,7 +16,7 @@
         <br>
         <input type="file" name="mainphoto"><br>
         <br>
-        <input type="submit" value="글쓰기">
+        <input type="submit" value="메뉴 등록">
     </form>
     <br>
     <a href="/blog/"><button>뒤로가기</button></a>&nbsp&nbsp&nbsp
