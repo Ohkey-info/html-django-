@@ -1,0 +1,113 @@
+<html lang="ko">
+    <head>
+        <title>앨범 일기장</title>
+        <style type="text/css">
+            @import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
+            html,body{width:100%;height:100%}
+            body,p,h1,h2,h3,h4,h5,h6,ul,ol,li,dl,dt,dd,table,th,td,form,fieldset,legend,input,textarea,button,select{margin:0;padding:0}
+            body,input,textarea,select,button,table{font-family: '돋움',Dotum,AppleGothic,sans-serif;font-size:12px;}
+            img,fieldset{border:0;}
+            ul,ol{list-style:none;}
+            em,address{font-size: normal;}
+            a{text-decoration: none;}
+            a:hover,a:active,a:focus{text-decoration: underline;}
+            .wrap{
+                width: 600px;
+                margin: 0 auto;
+                font-family: 'Nanum Gothic',sans-serif;
+            }
+            .wrap h1 {
+                position: relative;
+                padding: 1opx 0 4px;
+                text-align: center;
+                border-bottom: 1px solid #aaa;
+            }
+            .fixed_img_col ul {
+                /* border-bottom: 1px solid #aaa; */
+                *zoom : 1;
+            }
+            .fixed_img_col li {
+                float: left;
+                width: 120px;
+                height: 120px;
+                padding: 20px 15px;
+                margin-bottom: -1px;
+                border-top: 1px solid #aaa;
+                border-bottom: 1px solid #aaa;
+            }
+            .fixed_img_col li a {
+                display: block;
+                text-align: center;
+            }
+            .fixed_img_col li a .thumb{
+                position: relative;
+                display: block;
+                background-color: #ccc;
+                height: 120px;
+                color: #666;
+                text-align: center;
+                line-height: 120px;
+            }
+            .fixed_img_col li a .thumb em {
+                display: none;
+                position: absolute;
+                left: 0;
+                top:0;
+                width: 100%;
+                height: 100%;
+                background-color: rgba(0,0,0,5);
+                color: #eee;
+                font-weight: bold;
+                text-align: center;
+                line-height: 120px;
+            }
+            .fixed_img_col li a strong{
+                display: block;
+                padding: 8px 0 4px;
+                color: #333;
+                font-weight: bold;
+                line-height: 1.4;
+            }
+            .fixed_img_col li a:hover {
+                text-decoration: none;
+            }
+            .fixed_img_col li p {
+                color: #767676;
+                text-align: center;
+                font-weight: bold;
+                font-size: 1.2em;
+            }
+        </style>
+    </head>
+    <body>
+        <br><br><br><br>
+        <h1>
+            <p style="text-align:center;font-size: 2em;font-weight: bold;">💗JC&YY의 사진첩💗</p>
+        </h1>
+        <br><br><br>
+        <p style="text-align:right;font-size: 2em;">
+            <a href="new_post/">
+                <button style="font-size: 1em;border-radius: 20px;background-color: #A6EA40;">&nbsp일기쓰기&nbsp</button></a>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+        </p>
+        <br><br><br><br><br><br>
+        
+        <p style="font-weight:900;font-size: 1.8em;color: blueviolet;padding: 10 10;">💗우리가 만났던 날 : {{num_count}}일</p>
+        <!-- 게시판(postlist)의 게시글(list)을 하나씩 보여줍니다 -->
+        <!-- {와 %로 이루어진 구문 내부엔 파이썬이 사용됩니다 -->
+        <!-- <table> -->
+        <div class="fixed_img_col">
+            <ul>
+        {% for list in postlists %}
+            <!-- 게시글 클릭시 세부페이지로 넘어감-->
+            
+                <li>
+                    <a href="{{list.pk}}/"><img src = "{{list.mainphoto.url}}" alt="" width="100" height="100"></a>
+                    <p><a href="{{list.pk}}/">{{list.postname}}</a></p>
+                </li>
+            
+        {% endfor %}
+        </ul>
+        </div>
+        <!-- </table> -->
+    </body>
+</html>

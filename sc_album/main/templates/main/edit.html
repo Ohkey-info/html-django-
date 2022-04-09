@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>글 수정 페이지</title>
+</head>
+<body>
+    <h1></h1>
+    <form  action="{%url 'update' post.pk %}" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        날짜 입력<br>
+        <input type="text" name="postname" value="{{post.postname}}"><br>
+        내용<br>
+        <textarea rows="10" cols="50" name="contents">{{post.contents}}</textarea><br>
+        <br>
+        <input type="file" name="mainphoto" onchange="fileCheck(this)"><br>
+        <br>     
+        <input type="submit" value="수정">
+    </form>
+    <br>
+    <a href="/blog/{{post.pk}}"><button>뒤로가기</button></a>&nbsp&nbsp&nbsp   
+        
+</body>
+</html>
