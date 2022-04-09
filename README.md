@@ -16,3 +16,5 @@ $ pip install --upgrade pip
 $ sudo pip install django
 
 하고 runserver 해주세요)
+
+html은 sc_album/main/templates/main에 위치해있습니다
